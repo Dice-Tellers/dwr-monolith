@@ -2,12 +2,12 @@
 
 redis-server /usr/local/etc/redis.conf &
 
-python -m venv venv
+python3 -m venv venv
 . venv/bin/activate
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 export FLASK_APP=monolith
-python setup.py develop
+python3 setup.py develop
 
 celery -A monolith.tasks worker -B --loglevel=info &
 
-python -m flask run
+python3 -m flask run
