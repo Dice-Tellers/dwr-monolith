@@ -88,7 +88,7 @@ class TestUsers(flask_testing.TestCase):
         # Testing stories of not existing user
         response = self.client.get('/users/100/stories')
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.location, 'http://127.0.0.1:5000/')
+        self.assertEqual(response.location, 'http://127.0.0.1:5010/')
 
         # Testing stories of existing user
         response = self.client.get('/users/1/stories')
@@ -99,12 +99,12 @@ class TestUsers(flask_testing.TestCase):
         # Testing stories of not existing user
         response = self.client.get('/users/100/drafts')
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.location, 'http://127.0.0.1:5000/')
+        self.assertEqual(response.location, 'http://127.0.0.1:5010/')
 
         # Testing stories of other user
         response = self.client.get('/users/2/drafts')
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response.location, 'http://127.0.0.1:5000/')
+        self.assertEqual(response.location, 'http://127.0.0.1:5010/')
 
         # Testing stories of existing user
         response = self.client.get('/users/1/drafts')

@@ -372,11 +372,11 @@ class TestStories(flask_testing.TestCase):
 
         # Testing writing of other user's draft
         response = self.client.get(WRITE_URL + '/4')
-        self.assert_redirects(response, 'http://127.0.0.1:5000/users/1/drafts')
+        self.assert_redirects(response, 'http://127.0.0.1:5010/users/1/drafts')
 
         # Testing writing of an already published story
         response = self.client.get(WRITE_URL + '/1')
-        self.assert_redirects(response, 'http://127.0.0.1:5000/users/1/drafts')
+        self.assert_redirects(response, 'http://127.0.0.1:5010/users/1/drafts')
 
         # Testing writing of a new story with valid session
         with self.client.session_transaction() as session:

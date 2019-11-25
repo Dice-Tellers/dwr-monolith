@@ -1,6 +1,6 @@
 # Global URLS for extensibility
 
-HOME_URL = "http://127.0.0.1:5000/"
+HOME_URL = "http://127.0.0.1:5010/"
 
 REGISTER_URL = HOME_URL + "users/create"
 LOGIN_URL = HOME_URL + "users/login"
